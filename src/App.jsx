@@ -115,7 +115,7 @@ function App() {
   return (
     <div className="relative min-h-screen overflow-hidden font-sans text-white">
       
-      {/*DYNAMIC BACKGROUND LAYER(album art)*/}
+      {/*dynamic background layer(album art)*/}
       <div className="fixed inset-0 -z-10 bg-neutral-900">
         {albumArt && (
           <motion.div 
@@ -148,24 +148,24 @@ function App() {
               <Search size={20} />
             </div>
             
-            {/* Artist Input */}
+            {/*artist tnput*/}
             <input 
               type="text" placeholder="Artist"
               className="w-full bg-transparent border-none text-white placeholder-white/40 px-3 py-3 focus:outline-none font-medium tracking-wide"
               onChange={(e)=> setInputArtist(e.target.value)}
             />
             
-            {/* Divider */}
+            {/* divider */}
             <div className="h-6 w-px bg-white/20"></div>
 
-            {/* Song Input */}
+            {/*song input */}
             <input 
               type="text" placeholder="Song Name"
               className="w-full bg-transparent border-none text-white placeholder-white/40 px-3 py-3 focus:outline-none font-medium tracking-wide"
               onChange={(e)=> setInputSong(e.target.value)}
             />
 
-            {/* Go Button */}
+            {/*go button */}
             <button 
               onClick={handleSearch}
               className="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition active:scale-95"
@@ -233,17 +233,17 @@ function App() {
         >
           <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center group cursor-pointer" onClick={togglePlay}>
             
-            {/* Outer Glow */}
+            {/*glow around vinyl */}
             <div className={`absolute inset-0 rounded-full bg-white/10 blur-xl transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-0'}`} />
 
-            {/* Spinning Art */}
+            {/*spinning animation*/}
             <motion.div 
               animate={{ rotate: isPlaying ? 360 : 0 }}
               transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
               className="absolute inset-0 rounded-full border-4 border-black/40 shadow-2xl overflow-hidden bg-neutral-900"
             >
                 <img src={albumArt} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500" />
-                {/* Vinyl Grooves Texture overlay */}
+                {/*vinyl grooves texture overlay */}
                 <div className="absolute inset-0 rounded-full border border-white/5 opacity-20 pointer-events-none" 
                      style={{background: 'repeating-radial-gradient(#000 0, #000 2px, transparent 3px, transparent 4px)'}} />
             </motion.div>
