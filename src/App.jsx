@@ -244,7 +244,7 @@ function App() {
               transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
               className="absolute inset-0 rounded-full border-4 border-black/40 shadow-2xl overflow-hidden bg-neutral-900"
             >
-                <img src={albumArt} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500" />
+                <img src={albumArt} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 scale-[1.8]" />
                 {/*vinyl grooves texture overlay */}
                 <div className="absolute inset-0 rounded-full border border-white/5 opacity-20 pointer-events-none" 
                      style={{background: 'repeating-radial-gradient(#000 0, #000 2px, transparent 3px, transparent 4px)'}} />
