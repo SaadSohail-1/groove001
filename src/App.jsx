@@ -264,15 +264,25 @@ function App() {
             <div className="relative z-10 w-12 h-12 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110 group-active:scale-95">
               {isPlaying ? <Pause size={20} className="fill-black text-black"/> : <Play size={20} className="fill-black text-black ml-1"/> }
             </div>
-            <button 
-                type="button"
-                onClick={(e) => {
-                    e.stopPropagation();
-                    togglePlay();
-                }}
-                className="absolute inset-0 w-full h-full rounded-full z-50 cursor-pointer outline-none focus:ring-0 active:scale-95 transition-transform"
-                aria-label={isPlaying ? "Pause" : "Play"}
-            />
+            <div className="absolute inset-0 rounded-full overflow-hidden z-50 opacity-0">
+                <YouTube
+                  videoId={songId}
+                  opts={{
+                    height: '100%', 
+                    width: '100%', 
+                    playerVars: {
+                      autoplay: 1, 
+                      playsinline: 1,
+                      controls: 0, // No YouTube UI
+                      disablekb: 1,
+                      fs: 0,
+                      origin: window.location.origin 
+                    }
+                  }}
+                  onReady={onPlayerReady}
+                  onStateChange={onPlayerStateChange} 
+                />
+            </div>
           </div>
         </motion.div>
       )}
