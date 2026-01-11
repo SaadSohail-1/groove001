@@ -176,7 +176,7 @@ function App() {
         </motion.div>
 
         {/*hidden player*/}
-        <div className="hidden">
+        <div className="absolute top-0 left-0 w-1 h-1 opacity-0 pointer-events-none -z-50">
           {songId && (
             <YouTube
               videoId={songId}
