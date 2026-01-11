@@ -106,9 +106,12 @@ function App() {
     ])
   }
 
-  const togglePlay = () => {
+  const togglePlay = (e) => {
+    e?.preventDefault()
     if (playerRef.current) {
       isPlaying ? playerRef.current.pauseVideo() : playerRef.current.playVideo();
+    } else {
+      console.log("Player not ready yet.")
     }
   }
 
@@ -235,7 +238,7 @@ function App() {
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
           className="fixed bottom-8 right-8 z-50"
         >
-          <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center group cursor-pointer" onClick={togglePlay}>
+          <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center group cursor-pointer" onClick={togglePlay} onTouchEnd={togglePlay}>
             
             {/*glow outside the vinyl*/}
             <div className={`absolute inset-0 rounded-full bg-white/10 blur-xl transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-0'}`} />
