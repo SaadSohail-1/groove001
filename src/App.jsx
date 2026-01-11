@@ -230,27 +230,33 @@ function App() {
       {/*FLOATING VINYL CONTROLS*/}
       {songId && (
         <motion.div 
-          initial={{ y: 200, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ type: "spring", stiffness: 100, damping: 20 }}
+          initial={{ y: 200, opacity: 0 }} 
+          animate={{ y: 0, opacity: 1 }} 
+          transition={{ type: "spring", stiffness: 100, damping: 20 }}
           className="fixed bottom-8 right-8 z-50"
         >
           <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center group cursor-pointer" onClick={togglePlay}>
             
-            {/*glow around vinyl */}
+            {/*glow outside the vinyl*/}
             <div className={`absolute inset-0 rounded-full bg-white/10 blur-xl transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-0'}`} />
 
-            {/*spinning animation*/}
-            <motion.div 
-              animate={{ rotate: isPlaying ? 360 : 0 }}
-              transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-              className="absolute inset-0 rounded-full border-4 border-black/40 shadow-2xl overflow-hidden bg-neutral-900"
+            <div 
+              className="absolute inset-0 rounded-full border-4 border-black/40 shadow-2xl overflow-hidden bg-neutral-900 animate-[spin_8s_linear_infinite]"
+              style={{ animationPlayState: isPlaying ? 'running' : 'paused' }}
             >
-                <img src={albumArt} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 scale-[1.8]" />
-                {/*vinyl grooves texture overlay */}
+                {/*album art(zoomed to fill*/}
+                <img 
+                  src={albumArt} 
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition duration-500 scale-[1.8]" 
+                  alt="vinyl-art"
+                />
+                
+                {/*vinyl texture overlay */}
                 <div className="absolute inset-0 rounded-full border border-white/5 opacity-20 pointer-events-none" 
                      style={{background: 'repeating-radial-gradient(#000 0, #000 2px, transparent 3px, transparent 4px)'}} />
-            </motion.div>
+            </div>
 
-            {/*center play button*/}
+            {/*center play button (does not spin) */}
             <div className="relative z-10 w-12 h-12 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110 group-active:scale-95">
               {isPlaying ? <Pause size={20} className="fill-black text-black"/> : <Play size={20} className="fill-black text-black ml-1"/> }
             </div>
