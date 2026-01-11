@@ -140,18 +140,18 @@ function App() {
         
         {/*searchbar*/}
         <motion.div 
-          initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{duration:0.3}}
-          className="w-full max-w-2xl mb-16"
+          initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} 
+          className="w-full max-w-3xl mb-16"
         >
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xl border border-white/10 p-2 rounded-full shadow-2xl transition-all focus-within:bg-white/15 focus-within:border-white/30 hover:bg-white/15">
-            <div className="pl-4 text-white/50">
+            <div className="md:pl-4 pl-2 text-white/50">
               <Search size={20} />
             </div>
             
             {/*artist tnput*/}
             <input 
               type="text" placeholder="Artist"
-              className="w-full bg-transparent border-none text-white placeholder-white/40 px-3 py-3 focus:outline-none font-medium tracking-wide"
+              className="w-full bg-transparent border-none text-white placeholder-white/40 md:px-3 py-3 focus:outline-none font-medium tracking-wide"
               onChange={(e)=> setInputArtist(e.target.value)}
             />
             
@@ -161,7 +161,7 @@ function App() {
             {/*song input */}
             <input 
               type="text" placeholder="Song Name"
-              className="w-full bg-transparent border-none text-white placeholder-white/40 px-3 py-3 focus:outline-none font-medium tracking-wide"
+              className="w-full bg-transparent border-none text-white placeholder-white/40 md:px-3 py-3 focus:outline-none font-medium tracking-wide"
               onChange={(e)=> setInputSong(e.target.value)}
             />
 
