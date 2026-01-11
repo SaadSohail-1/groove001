@@ -2,8 +2,7 @@
 
 A stunning, glassmorphic music player built with **React** and **Framer Motion**. Groove creates an immersive listening experience by dynamically fetching audio, synced-style lyrics, and high-resolution album art, all wrapped in a modern, cinematic UI.
 
-![Project Preview](![alt text](/image.png))
-*(Note: Replace the image link above with an actual screenshot of your application)*
+![Project Preview](./public/image.png)
 
 ## ✨ Features
 
