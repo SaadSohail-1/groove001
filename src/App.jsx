@@ -22,7 +22,8 @@ function App() {
     width: '0', 
     playerVars: {
       autoplay: 1, 
-      playsinline: 1
+      playsinline: 1,
+      origin: window.location.origin
     }
   }
 
@@ -263,6 +264,15 @@ function App() {
             <div className="relative z-10 w-12 h-12 bg-white/90 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 group-hover:scale-110 group-active:scale-95">
               {isPlaying ? <Pause size={20} className="fill-black text-black"/> : <Play size={20} className="fill-black text-black ml-1"/> }
             </div>
+            <button 
+                type="button"
+                onClick={(e) => {
+                    e.stopPropagation();
+                    togglePlay();
+                }}
+                className="absolute inset-0 w-full h-full rounded-full z-50 cursor-pointer outline-none focus:ring-0 active:scale-95 transition-transform"
+                aria-label={isPlaying ? "Pause" : "Play"}
+            />
           </div>
         </motion.div>
       )}
