@@ -179,7 +179,7 @@ function App() {
           </div>
         </motion.div>
 
-        {/*hidden player*/}
+        {/* hidden player
         <div className="absolute top-0 left-0 w-1 h-1 opacity-0 pointer-events-none -z-50">
           {songId && (
             <YouTube
@@ -189,7 +189,7 @@ function App() {
               onStateChange={onPlayerStateChange} 
             />
           )}
-        </div>
+        </div> */}
 
         {/*lyrics block */}
         <div className="w-full max-w-3xl text-center pb-32">
