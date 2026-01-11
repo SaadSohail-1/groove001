@@ -176,14 +176,16 @@ function App() {
         </motion.div>
 
         {/*hidden player*/}
-        {songId && (
-          <YouTube
-            videoId={songId}
-            opts={opts}
-            onReady={onPlayerReady}
-            onStateChange={onPlayerStateChange} 
-          />
-        )}
+        <div className="hidden">
+          {songId && (
+            <YouTube
+              videoId={songId}
+              opts={opts}
+              onReady={onPlayerReady}
+              onStateChange={onPlayerStateChange} 
+            />
+          )}
+        </div>
 
         {/*lyrics block */}
         <div className="w-full max-w-3xl text-center pb-32">
