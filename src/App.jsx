@@ -207,7 +207,7 @@ function App() {
 
                 {/*the lyrics text*/}
                 <div className="relative">
-                   <p className="whitespace-pre-wrap font-sans text-xl md:text-2xl leading-[2.5] text-white/90 font-medium drop-shadow-lg selection:bg-white selection:text-black">
+                   <p className="whitespace-pre-wrap font-sans text-xl md:text-2xl md:leading-[2.5] leading-relaxed text-white/90 font-medium drop-shadow-lg selection:bg-white selection:text-black">
                      {lyrics}
                    </p>
                 </div>
