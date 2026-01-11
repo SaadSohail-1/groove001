@@ -136,7 +136,7 @@ function App() {
       </div>
 
       {/*main content */}
-      <div className="flex flex-col items-center p-10 z-10 relative">
+      <div className="flex flex-col items-center md:px-10 py-10 z-10 relative">
         
         {/*searchbar*/}
         <motion.div 
