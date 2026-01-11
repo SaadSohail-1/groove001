@@ -116,7 +116,7 @@ function App() {
     <div className="relative min-h-screen overflow-hidden font-sans text-white">
       
       {/*dynamic background layer(album art)*/}
-      <div className="fixed inset-0 -z-10 bg-neutral-900">
+      <div className="fixed inset-0 z-0 bg-neutral-900">
         {albumArt && (
           <motion.div 
             key={albumArt} 
@@ -128,7 +128,7 @@ function App() {
             <img 
               src={albumArt} 
               alt="Background" 
-              className="w-full h-full object-cover blur-lg opacity-60 scale-110" 
+              className="w-full h-full object-cover blur-md opacity-60 scale-110" 
             />
             <div className="absolute inset-0 bg-black/50" />
           </motion.div>
