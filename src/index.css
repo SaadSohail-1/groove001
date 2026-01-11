@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ADD THIS SECTION */
+html, body {
+  background-color: #171717; /* This matches neutral-900 */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevents side-scrolling glitches */
+}
