@@ -17,16 +17,6 @@ function App() {
   
   const playerRef = useRef(null)
 
-  const opts = {
-    height: '0', 
-    width: '0', 
-    playerVars: {
-      autoplay: 1, 
-      playsinline: 1,
-      origin: window.location.origin
-    }
-  }
-
   const onPlayerReady = (event) => {
     playerRef.current = event.target;
     event.target.playVideo();
@@ -178,7 +168,7 @@ function App() {
             </button>
           </div>
         </motion.div>
-        
+
         {/*lyrics block */}
         <div className="w-full max-w-3xl text-center pb-32">
           <AnimatePresence mode="wait">
@@ -261,7 +251,7 @@ function App() {
                     playerVars: {
                       autoplay: 1, 
                       playsinline: 1,
-                      controls: 0, // No YouTube UI
+                      controls: 0,//disable the youtube UI
                       disablekb: 1,
                       fs: 0,
                       origin: window.location.origin 
