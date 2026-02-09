@@ -220,7 +220,7 @@ function App() {
           <div className="relative w-32 h-32 md:w-40 md:h-40 flex items-center justify-center group cursor-pointer" onClick={togglePlay} onTouchEnd={togglePlay}>
             
             {/*glow outside the vinyl*/}
-            <div className={`absolute inset-0 rounded-full bg-white/10 blur-xl transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-0'}`} />
+            <div className={`absolute inset-0 rounded-full bg-white/10 blur-xl transition-opacity duration-500 animate-pulse ${isPlaying ? 'opacity-100' : 'opacity-0'}`} />
 
             <div 
               className="absolute inset-0 rounded-full border-4 border-black/40 shadow-2xl overflow-hidden bg-neutral-900 animate-[spin_8s_linear_infinite]"
